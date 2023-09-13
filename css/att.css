@@ -150,24 +150,35 @@ font-size: 100px;
 .Sec5 .wrapper h3 {
   color: #fff;
   padding-top: 935px;
+
 }
 
 .Sec5 .cavicircle {
-  margin-top: 186px;
   background: url(../img/sub_sub_ball.png) no-repeat;
   position: relative;
   z-index: 1;
   width: 860px;
   height: 790px;
+  left: 13%;
 }
 
 .Sec5 .cavicircle span {
   position: absolute;
   z-index: 2;
-  color: #fff !important;
+}
+.Sec5 .cavicircle span a{
+  color: #fff;
 }
 .Sec5 .cavicircle span:first-child {
-  top: 30%;
+  top: 50%;
+  left: 49%;
+}
+.Sec5 .cavicircle span:nth-child(2) {
+  top: 20%;
+  left: 49%;
+}
+.Sec5 .cavicircle span:last-child {
+  top: 70%;
   left: 49%;
 }
 .Sec6 {
