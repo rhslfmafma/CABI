@@ -70,7 +70,7 @@ let rotation = 0;
 $('.cavicircle span').each(function(index) {
   rotation+= angle;
   $(this).css({
-    'transform' : 'rotate(' + rotation + 'deg) translate(100px) rotate(-'+rotation +"deg)"
+    'transform' : 'rotate(' + rotation + 'deg) translate(100px) rotate(-'+rotation +'deg)'
   })
 })
 
