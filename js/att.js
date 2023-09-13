@@ -48,7 +48,13 @@ AOS.init();
 
 /* section5*/
 let square = $('.cube')
-TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
+let cubeparent = square.parent();
+let cubeparentX = square.width() /2;
+let cubeparentY = square.height() /2;
+
+// TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
+
+
 
 let numLinks = $('.cavicircle span').length;
 let angle = 360 / numLinks;
@@ -60,3 +66,20 @@ $('.cavicircle span').each(function(index) {
     'transform' : 'rotate(' + rotation + 'deg) translate(100px) rotate(-'+rotation +"deg)"
   })
 })
+
+
+cubeparent.mouseover(function(){
+  let mouseX = event.clientX - cubeparent.offset().left - cubeparentX;
+  let mouseY = event.clientY - cubeparent.offset().top - cubeparentY;
+
+  let rotationX = -mouseY / 10;
+  let rotationY = -mouseX / 10;
+  square.css({
+    transform: 'rotateX(' + rotationX + 'deg) rotateY(' + rotationY + 'deg)'
+  });
+});
+cubeparent.mouseleave(function(){
+  square.css({
+    transform: 'rotateX(0deg) rotateY(0deg)'
+  });
+});
