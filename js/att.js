@@ -49,3 +49,14 @@ AOS.init();
 /* section5*/
 let square = $('.cube')
 TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
+
+let numLinks = $('.cavicircle span').length;
+let angle = 360 / numLinks;
+let rotation = 0;
+
+$('.cavicircle span').each(function(index) {
+  rotation+= angle;
+  $(this).css({
+    'transform' : 'rotate(' + rotation + 'deg) translate(100px) rotate(-'+rotation +"deg)"
+  })
+})

@@ -46,12 +46,19 @@ iframe {
 }
 
 .Sec3_introtxt {
-  padding: 48px 766px 94px 32px;
+  padding: 48px 0px 120px;
+}
+.Sec3_introtxt span:first-child {
+  font-weight: bold;
 }
 
 .Sec3_title {
-  color: #000 !important;
-  font-weight: bold;
+  color: var(--Main-Color, #272727);
+  font-family: Inter;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 57.692% */
 }
 
 .bluetitle {
@@ -62,7 +69,7 @@ iframe {
   padding:  0px 49px;
 }
 .Sec3 .figure01 {
-  padding: 217px 446px 300px 299px;
+  padding: 0px 446px 300px 299px;
   position: relative;
 }
 .Sec3 .figure02 {
@@ -78,24 +85,33 @@ iframe {
   position: relative;
 }
 
-.figure01_textgroup {
+.figure_textgroup {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(950px, 690px);
+  transform: translate(950px, -2%);
+  padding: 0px 54px;
 }
 .figure01_textgroup h1 {
-margin-top: -36%;
 padding-bottom: 32px;
 }
-.figure01_textgroup h2 {
-padding-bottom: 150px;
+.figure01_textgroup > p span {
+display: block;
+}
+.figure_textgroup h2 {
+  line-height: 60px !important;
+}
+.figure01_textgroup .subtext {
+  padding-top: 22%;
+}
+.figure02 img {
+  padding-left: 39%;
 }
 .figure02_textgroup {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(1190px, 0px);
+  transform: translate(388px, 0px);
 }
 
 .Sec4 {
@@ -127,8 +143,33 @@ font-size: 100px;
 .Sec5 {
   background-image: url(../img/wave.png);
   height: 2611px;
+  margin-top: 287px;
+  text-align: center;
 }
 
+.Sec5 .wrapper h3 {
+  color: #fff;
+  padding-top: 935px;
+}
+
+.Sec5 .cavicircle {
+  margin-top: 186px;
+  background: url(../img/sub_sub_ball.png) no-repeat;
+  position: relative;
+  z-index: 1;
+  width: 860px;
+  height: 790px;
+}
+
+.Sec5 .cavicircle span {
+  position: absolute;
+  z-index: 2;
+  color: #fff !important;
+}
+.Sec5 .cavicircle span:first-child {
+  top: 30%;
+  left: 49%;
+}
 .Sec6 {
   text-align: center;
 }
@@ -185,6 +226,7 @@ font-size: 100px;
   border: 1px solid #272727;
   background: #FFF;
   margin-top: 238px;
+  overflow-x: hidden;
 }
 
 .Guide-Rules li a {
