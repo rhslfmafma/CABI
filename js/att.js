@@ -49,8 +49,15 @@ AOS.init();
 /* section5*/
 let square = $('.cube')
 let cubeparent = square.parent();
-let cubeparentX = square.width() /2;
-let cubeparentY = square.height() /2;
+let cubeparentX = cubeparent.offset().left + cubeparent.width() /2;
+let cubeparentY = cubeparent.offset().top + cubeparent.height() /2;
+let sensitivity = 10;
+
+let targetrotationX = 0;
+let targetrotationY = 0;
+let currentrotationX = 0;
+let currentrotationY = 0;
+
 
 // TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
 
@@ -68,18 +75,34 @@ $('.cavicircle span').each(function(index) {
 })
 
 
-cubeparent.mouseover(function(){
-  let mouseX = event.clientX - cubeparent.offset().left - cubeparentX;
-  let mouseY = event.clientY - cubeparent.offset().top - cubeparentY;
+cubeparent.mousemove(function(event){
+  let mouseX = event.clientX - cubeparentX;
+  let mouseY = event.clientY - cubeparentY;
 
-  let rotationX = -mouseY / 10;
-  let rotationY = -mouseX / 10;
-  square.css({
-    transform: 'rotateX(' + rotationX + 'deg) rotateY(' + rotationY + 'deg)'
+  let rotationX = (mouseX - cubeparent.height()/ 2) / sensitivity;
+  let rotationY = (mouseY - cubeparent.width()/ 2) / sensitivity;
+  animateRotation();
   });
-});
+
+  function animateRotation() {
+    let diffX = targetrotationX - currentrotationX;
+    let diffY = targetrotationY - currentrotationY;
+    
+    currentrotationX += diffX * 0.1;
+    currentrotationY += diffY * 0.1;
+  
+    square.css({
+      transform: 'rotateX(' + currentrotationX + 'deg) rotateY(' + currentrotationY + 'deg)'
+    });
+    requestAnimationFrame(animateRotation);
+}
+
 cubeparent.mouseleave(function(){
-  square.css({
-    transform: 'rotateX(0deg) rotateY(0deg)'
-  });
+  targetrotationX = 0;
+  targetrotationY = 0;
+  animateRotation();
+});
+
+cubeparent.mouseenter(function(){
+  animateRotation();
 });
