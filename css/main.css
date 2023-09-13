@@ -811,6 +811,10 @@ header .bottom_list h1 {
 header .bottom_list h1 a {
   top: 0;
   left: 0;
+  text-indent: -999em;
+  width: 130px;
+  height: 47px;
+  display: block;
 }
 .Sec5_left {
   width: 400px;
@@ -917,8 +921,6 @@ header .bottom_list h1 a:first-child {
 }
 header .bottom_list h1 a:last-child {
   background: url(../img/header_logo_white_03.png) no-repeat;
-  width: 130px;
-  height: 47px;
 }
 
 header .toggle_btn {

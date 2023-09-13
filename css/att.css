@@ -10,20 +10,28 @@ iframe {
   width: 100%;  
   height: 980px;
 }
-.Sec1 > h2 {
-  font-size: 810%;
-  text-transform: uppercase;
-  padding-left: 96%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(-361px, 890px);
-  color: #fff;  
+
+.Sec1 {
+  height: 200vh;
+}
+.VideoContainer {
+  position: sticky;
+  top:0;
+  overflow: hidden;
+
 }
 
+.VideoContainer h2{
+  font-size: 810%;
+  text-transform: uppercase;  
+  color: #fff;
+  position: absolute;
+  top:30%;
+  left:70%;
+}
 
 .Sec2 {
-  background: var(--gr, linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 75, 172, 0.70) 100%));
+  background: var(--gr, linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 75, 172, 0.70) 100%));  
   opacity: 0.8;
   width: 1920px;
   height: 857px;
@@ -76,6 +84,13 @@ iframe {
   left: 0;
   transform: translate(950px, 690px);
 }
+.figure01_textgroup h1 {
+margin-top: -36%;
+padding-bottom: 32px;
+}
+.figure01_textgroup h2 {
+padding-bottom: 150px;
+}
 .figure02_textgroup {
   position: absolute;
   top: 0;
@@ -114,6 +129,9 @@ font-size: 100px;
   height: 2611px;
 }
 
+.Sec6 {
+  text-align: center;
+}
 .Sec6 div h1 {
   color: #17407E;
 }
@@ -122,18 +140,26 @@ font-size: 100px;
   width: 371.096px;
   height: 371.096px;
   border-radius: 371.096px;
-  border: 2px solid #767676;
-
+  position: relative;
+  text-align: center;
 }
 
 .Sec7_options li:first-child {
-  background: #E9E007;
+  background: #FA944B;
 }
 .Sec7_options li:nth-child(2) {
-  background: #63DB6F;
+  background: #1CB7E5;
 }
 .Sec7_options li:last-child {
-  background: #FA5555;
+  background: #E31A50;
+}
+
+.Sec7_options li h4 a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
 }
 
 .Sec9 {
@@ -156,7 +182,15 @@ font-size: 100px;
 }
 
 .Guide-Rules {
-  border: 1px solid #000;
+  border: 1px solid #272727;
   background: #FFF;
   margin-top: 238px;
+}
+
+.Guide-Rules li a {
+  background: conic-gradient(from 90deg at 48.31% 50%, #2B6DAA 20.625000447034836deg, #4B3CFB 166.8749964237213deg, #4B3CFB 277.4999928474426deg);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+white-space: nowrap;
 }
