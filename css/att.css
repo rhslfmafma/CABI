@@ -153,31 +153,32 @@ font-size: 100px;
 
 }
 
-.Sec5 .cavicircle {
+.Sec5 .cube {
   background: url(../img/sub_sub_ball.png) no-repeat;
   position: relative;
   z-index: 1;
   width: 860px;
   height: 790px;
   left: 13%;
+  transform-origin: center center;
 }
 
-.Sec5 .cavicircle span {
+.Sec5 .cube span {
   position: absolute;
   z-index: 2;
 }
-.Sec5 .cavicircle span a{
+.Sec5 .cube span a{
   color: #fff;
 }
-.Sec5 .cavicircle span:first-child {
+.Sec5 .cube span:first-child {
   top: 50%;
   left: 49%;
 }
-.Sec5 .cavicircle span:nth-child(2) {
+.Sec5 .cube span:nth-child(2) {
   top: 20%;
   left: 49%;
 }
-.Sec5 .cavicircle span:last-child {
+.Sec5 .cube span:last-child {
   top: 70%;
   left: 49%;
 }

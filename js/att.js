@@ -44,14 +44,12 @@ $(window).scroll(function(){
   
 
 
-AOS.init();
+// AOS.init();
 
 /* section5*/
-let square = $('.cube'); //변수명지정
+
 
 // TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
-
-
 
 let numLinks = $('.cavicircle span').length;
 let angle = 360 / numLinks;
@@ -64,16 +62,45 @@ $('.cavicircle span').each(function(index) {
   })
 })
 
-let cubeparent = square.parent();
-let cubeparentY = cubeparent.offset().top + cubeparent.height() /2;
 
-function rotateCube(e) {
-  // TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
-  let cubeparentX = e.clientX - cubeparent.offset().left - cubeparent.width() / 2 ;
-  let cubeparentY = e.clientY - cubeparent.offset().top - cubeparent.height() / 2 ;
+let square = $('.cube'); // 원형 변수선택
+let cubeparent = square.parent(); //원형 부모요소선택
+let isHoverd = false; //마우스가 요소 위 올려져있는 지 여부 저장 변수
+let autoRotateInterval;
+
+
+// TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
+
+//자동회전 함수 
+// autoRotate 함수는 마우스가 요소 위에 올려져 있지 않을 때, cube를 3초에 한 번씩 360도씩 회전시킵니다.
+// function autoRotate() {
+//   if (!isHoverd) {
+//   TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
+//   }
+// }
+// 자동회전 함수
+function autoRotate() {
+  autoRotateInterval = setInterval(function() {
+    if (!isHovered) {
+      TweenMax.to(square, 3, { rotation: "+=360", ease: Linear.easeNone });
+    }
+  }, 3000);
+}
+
+// StopautoRotate 함수는 isHovered 변수를 true로 변경하여 자동 회전을 멈춥니다.
+function StopautoRotate() {
+  clearInterval(autoRotateInterval);
+}
+
+//커서에 따라 회전하는 함수
+// rotateCube 함수는 마우스의 위치에 따라 cube를 회전시킵니다.
+
+function rotateCube(e) { 
+  let cubeparentX = (e.clientX - cubeparent.offset().left) - (cubeparent.width() / 2) ;
+  let cubeparentY = (e.clientY - cubeparent.offset().top) - (cubeparent.height() / 2) ;
   let q = 0.15;
 
-  let cubeRotateX = cubeparentY * q;
+  let cubeRotateX = -cubeparentY * q;
   let cubeRotateY = cubeparentX * q;
   
   square.css({
@@ -82,4 +109,22 @@ function rotateCube(e) {
     });
 }
 
-$(document).mousemove(rotateCube);
+autoRotate();
+
+//원형에 마우스 호버 시 stopautorotate 함수 실행
+square.mouseenter(function(e){
+  isHoverd = true;
+  StopautoRotate();
+  rotateCube(e);
+});
+
+//원형에 마우스 빠져나가면 isHoverd변수를 false로 설정 후 자동 회전 다시 시작
+square.mouseleave(function(){
+  isHoverd = false;
+  autoRotate();
+});
+
+// rotateCube 함수는 마우스 위치에 따라 cube를 회전시킵니다.
+$(document).mousemove(function(e){
+  rotateCube(e);
+});
