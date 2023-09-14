@@ -52,9 +52,10 @@
   });
 
 
-
-  // AOS.init();
-
+  AOS.init({
+    duration: 1200,
+    easing: 'ease-in-out-back'
+  });
   /* SECTION5 */
 
 
@@ -162,7 +163,7 @@
       if (scrollTop > 1900) {
         console.log('작동');
         // scale과 translateY 값을 각각 0.01씩 증가시킵니다.
-        if (oX < 178) {
+        if (oX < 168) {
           oX +=1;   
           oY +=1;   
           objectcircle1.css({'transform': `translateY(${-20 * oY}px) translateX(${16 * oX}px)`});
