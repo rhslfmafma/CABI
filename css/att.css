@@ -37,17 +37,33 @@ iframe {
 .Sec2 {
   background: var(--gr, linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 75, 172, 0.70) 100%));  
   opacity: 0.8;
-  width: 1920px;
   height: 857px;
   flex-shrink: 0;
   text-align: center;
   vertical-align: middle;
+  position: relative;
 }
 
 .Sec2 h2 {
   color: #fff !important;
   padding-top: 228px;
 }
+
+.object {
+  position: absolute;
+  top: 41%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+}
+
+.object .Sec2_circle,.Sec2_squre, .Sec2_triangle {
+  width: 155px;
+  height: 145px;
+  background-color:red;
+  border-radius: 50%;
+  position: absolute;
+}
+
 
 .Sec3_introtxt {
   padding: 48px 0px 120px;

@@ -1,4 +1,6 @@
 
+/* SECTION1 */
+
 /*윈도우 스크롤 발생시, 스크롤양이 메뉴의 offsetTop보다 크다면,
     메뉴에 클래스명 sticky추가 후, 최상단 고정 및 배경색 그라디언트 변경
     각 메인 메뉴의 글자색 흰색으로 변경 
@@ -34,28 +36,28 @@ $(window).scroll(function(){
   } else {    
     console.log('스크롤 양: ' + scrollTop);      
     VideoContainertext.css('transform', 'none');      
-    $('.Sec2 h2').css({
-      'color':'rgba(0, 0, 0, 1)',
-      'text-shadow': 'none'  // 글자 투영 효과
-
-    }); // 수정 
-    }
+    // $('.Sec2 h2').css({
+    //   'color':'rgba(0, 0, 0, 1)',
+    //   'text-shadow': 'none'  // 글자 투영 효과
+    // }); // 수정 
+    // }
 
     // 현재 스크롤 양을 이전 스크롤 양으로 업데이트합니다.
     scrollmat = scrollTop;
 
-    if (scrollTop > 200) {
+    if (scrollTop > 615) {
       VideoContainertext.hide();
       videoiframe.css('visibility', 'visible').fadeIn(200000);
     }
+  }
 });
-  
 
 
 
 // AOS.init();
 
-/* section5*/
+/* SECTION5 */
+
 
 
 
@@ -135,3 +137,43 @@ square.mouseleave(function(){
 $(document).mousemove(function(e){
   // rotateCube(e);
 });
+
+
+
+/* SECTION2 */
+
+let objectcircles = $('.object div');
+let objectcircle1 = objectcircles.eq(0);
+let objectcircle2 = objectcircles.eq(1);
+let objectcircle3 = objectcircles.eq(2);
+
+
+let  objectscale = 1;
+let  objecttranslateX = 0;
+let  objecttranslateY = 0;
+
+
+
+// 주어진 코드는 윈도우를 스크롤할 때 발생하는 이벤트 핸들러입니다.
+$(window).scroll(function(){    
+  let scrollTop = $(window).scrollTop();    //윈도우 객체의 scrollY속성을 사용하여 스크롤 양을 로드  
+
+  // 스크롤 양이 이전 스크롤 양보다 큰 경우
+  if (scrollTop > scrollmat) {       
+      
+    
+    if (scrollTop > 200) {
+    // scale과 translateY 값을 각각 0.01씩 증가시킵니다.
+    objectscale+= 0.04;
+    objecttranslateX +=0.01;
+    objecttranslateY +=20;
+
+      objectcircle1.css({'transform':`translateY(${objecttranslateY}px) translateX(${objecttranslateX}px)`});
+      objectcircle2.css({'transform':`translateY(${objecttranslateY}px) translateX(${objecttranslateX}px)`});
+      objectcircle3.css({'transform':`translateY(${objecttranslateY}px) translateX(${objecttranslateX}px)`});
+      }
+}
+  scrollmat = scrollTop;
+});
+
+  
