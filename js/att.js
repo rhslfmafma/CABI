@@ -20,7 +20,7 @@ $(window).scroll(function(){
   if (scrollTop > scrollmat) {        
       console.log('스크롤 양: ' + scrollTop);     
     // scale과 translateY 값을 각각 0.01씩 증가시킵니다.
-    scale-= 0.02;
+    scale-= 0.04;
     translateY -=0.01;
     translateX -=20;
 
@@ -44,7 +44,7 @@ $(window).scroll(function(){
     // 현재 스크롤 양을 이전 스크롤 양으로 업데이트합니다.
     scrollmat = scrollTop;
 
-    if (scrollTop > 400) {
+    if (scrollTop > 200) {
       VideoContainertext.hide();
       videoiframe.css('visibility', 'visible').fadeIn(200000);
     }
