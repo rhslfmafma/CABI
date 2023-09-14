@@ -145,20 +145,20 @@ $(window).scroll(function(){
   let scrollTop = $(window).scrollTop();    //윈도우 객체의 scrollY속성을 사용하여 스크롤 양을 로드  
   // 스크롤 양이 이전 스크롤 양보다 큰 경우
   if (scrollTop > scrollmat) {       
-    if (scrollTop > 1800) {
+    if (scrollTop > 1899) {
       objectcircle1.addClass('active');
       objectcircle2.addClass('active');
       objectcircle3.addClass('active');
     }
-    if (scrollTop > 1890) {
+    if (scrollTop > 1900) {
       console.log('작동');
       // scale과 translateY 값을 각각 0.01씩 증가시킵니다.
       if (oX < 178) {
         oX +=1;   
         oY +=1;   
-        objectcircle1.css({'transform': `translateY(${-9 * oY}px) translateX(${9 * oX}px)`});
-        objectcircle2.css({'transform': `translateY(${-9 * oY}px) translateX(${-9 * oX}px)`});
-        objectcircle3.css({'transform': `translateY(${9 * oY}px) translateX(${-9 * oX}px)`});  
+        objectcircle1.css({'transform': `translateY(${-16 * oY}px) translateX(${16 * oX}px)`});
+        objectcircle2.css({'transform': `translateY(${-16 * oY}px) translateX(${-16 * oX}px)`});
+        objectcircle3.css({'transform': `translateY(${16 * oY}px) translateX(${-16 * oX}px)`});  
       } 
     }
     if (scrollTop > 2140) {
@@ -168,9 +168,12 @@ $(window).scroll(function(){
 
       // Sec2 h2를 보이고, 투영하게    
       Sec2title.addClass('active');
+    }
+    if (scrollTop > 2237) {
+      // Sec2 h2를 보이고, 투영하게  
       Sec2title.css({
-        'color': 'transparent',
-        'text-shadow': '0 0 10px rgba(255,255,255,0.8)'  // 글자 투영 효과
+        'color': '#17407E',
+        'text-shadow': '0 0 12px rgba(23,64,126,0.8)'  // 글자 투영 효과
       }); // 수정          
     }
   }  
