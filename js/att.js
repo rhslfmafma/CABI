@@ -30,11 +30,7 @@ $(window).scroll(function(){
 
     // VideoContainertext 요소에 transform 속성을 적용합니다.
     VideoContainertext.css({'transform':`scale(${scale}) translateY(${translateY}px) translateX(${translateX}px)`});
-    // Sec2 h2를 투영하게    
-    $('.Sec2 h2').css({
-        'color': 'transparent',
-        'text-shadow': '0 0 10px rgba(255,255,255,0.8)'  // 글자 투영 효과
-      }); // 수정
+
   } else {    
   
 
@@ -43,6 +39,7 @@ $(window).scroll(function(){
     VideoContainertext.hide();
     videoiframe.addClass('active');
   }
+
 });
 
 
@@ -139,34 +136,40 @@ let objectcircles = $('.object div');
 let objectcircle1 = objectcircles.eq(0);
 let objectcircle2 = objectcircles.eq(1);
 let objectcircle3 = objectcircles.eq(2);
-
-
-let  objectscale = 1;
-let  objecttranslateX = 0;
-let  objecttranslateY = 0;
+let  oX = 0;
+let  oY = 0;
 
 
 
 // 주어진 코드는 윈도우를 스크롤할 때 발생하는 이벤트 핸들러입니다.
 $(window).scroll(function(){    
   let scrollTop = $(window).scrollTop();    //윈도우 객체의 scrollY속성을 사용하여 스크롤 양을 로드  
-
   // 스크롤 양이 이전 스크롤 양보다 큰 경우
   if (scrollTop > scrollmat) {       
-      
-    
-    if (scrollTop > 200) {
-    // scale과 translateY 값을 각각 0.01씩 증가시킵니다.
-    objectscale+= 0.04;
-    objecttranslateX +=0.01;
-    objecttranslateY +=20;
-
-      objectcircle1.css({'transform':`translateY(${objecttranslateY}px) translateX(${objecttranslateX}px)`});
-      objectcircle2.css({'transform':`translateY(${objecttranslateY}px) translateX(${objecttranslateX}px)`});
-      objectcircle3.css({'transform':`translateY(${objecttranslateY}px) translateX(${objecttranslateX}px)`});
-      }
-}
-  scrollmat = scrollTop;
+    if (scrollTop > 1800) {
+      objectcircle1.addClass('active');
+      objectcircle2.addClass('active');
+      objectcircle3.addClass('active');
+    }
+    if (scrollTop > 1900) {
+      console.log('작동');
+      // scale과 translateY 값을 각각 0.01씩 증가시킵니다.
+      if (oX < 100) {
+        oX +=5;   
+        oY +=3;   
+        objectcircle1.css({'transform': `translateY(${-1 * oY}px) translateX(${1 * oX}px)`});
+        objectcircle2.css({'transform': `translateY(${-1 * oY}px) translateX(${-1 * oX}px)`});
+        objectcircle3.css({'transform': `translateY(${1 * oY}px) translateX(${-1 * oX}px)`});  
+      } 
+    }
+    if (scrollTop > 2400) {
+      // Sec2 h2를 투영하게    
+      $('.Sec2 h2').css({
+        'color': 'transparent',
+        'text-shadow': '0 0 10px rgba(255,255,255,0.8)'  // 글자 투영 효과
+      }); // 수정          
+    }
+  }  
 });
 
   
