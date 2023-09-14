@@ -3,7 +3,7 @@
 
 /* body */
 .breadcrumb {
-  padding-top: 92px;
+  padding-top: 112px;
 }
 
 iframe {
@@ -14,9 +14,7 @@ iframe {
   transition: 0.5s;
 }
 iframe.active {
-
   visibility: visible;
-
   opacity: 1;
 }
 .Sec1 {
@@ -24,7 +22,7 @@ iframe.active {
 }
 .VideoContainer {
   position: sticky;
-  top:0;
+  top:0px;
   overflow: hidden;
 
 }
@@ -50,7 +48,7 @@ iframe.active {
 }
 
 .Sec2 h2 {
-  color: #fff !important;
+  color: #17407E !important;
   padding-top: 620px;
   opacity: 0;
   transition: 1s;
@@ -66,11 +64,26 @@ iframe.active {
   transform: translate(-50%, -50%);
 
 }
+.object .Sec2_circle {
+  background: url(/img/sub_Sec2_hat.png) no-repeat;
+  width: 159px;
+  height: 159px;
+}
+.object .Sec2_squre {
+  background: url(/img/sub_Sec2_ball.png) no-repeat;
+  width: 159px;
+  height: 159px;
+}
+.object .Sec2_triangle {
+  background: url(/img/sub_Sec2_star.png) no-repeat;
+  width: 138px;
+  height: 133px;
+}
+
 
 .object .Sec2_circle,.Sec2_squre, .Sec2_triangle {
   width: 155px;
   height: 145px;
-  background-color:red;
   border-radius: 50%;
   position: absolute;
   transition: 1s;
