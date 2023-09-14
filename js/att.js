@@ -138,8 +138,7 @@ let objectcircle2 = objectcircles.eq(1);
 let objectcircle3 = objectcircles.eq(2);
 let  oX = 0;
 let  oY = 0;
-
-
+let Sec2title = $('.Sec2 h2');
 
 // 주어진 코드는 윈도우를 스크롤할 때 발생하는 이벤트 핸들러입니다.
 $(window).scroll(function(){    
@@ -151,20 +150,25 @@ $(window).scroll(function(){
       objectcircle2.addClass('active');
       objectcircle3.addClass('active');
     }
-    if (scrollTop > 1900) {
+    if (scrollTop > 1890) {
       console.log('작동');
       // scale과 translateY 값을 각각 0.01씩 증가시킵니다.
-      if (oX < 100) {
-        oX +=5;   
-        oY +=3;   
-        objectcircle1.css({'transform': `translateY(${-1 * oY}px) translateX(${1 * oX}px)`});
-        objectcircle2.css({'transform': `translateY(${-1 * oY}px) translateX(${-1 * oX}px)`});
-        objectcircle3.css({'transform': `translateY(${1 * oY}px) translateX(${-1 * oX}px)`});  
+      if (oX < 178) {
+        oX +=1;   
+        oY +=1;   
+        objectcircle1.css({'transform': `translateY(${-9 * oY}px) translateX(${9 * oX}px)`});
+        objectcircle2.css({'transform': `translateY(${-9 * oY}px) translateX(${-9 * oX}px)`});
+        objectcircle3.css({'transform': `translateY(${9 * oY}px) translateX(${-9 * oX}px)`});  
       } 
     }
-    if (scrollTop > 2400) {
-      // Sec2 h2를 투영하게    
-      $('.Sec2 h2').css({
+    if (scrollTop > 2140) {
+      objectcircle1.removeClass('active');
+      objectcircle2.removeClass('active');
+      objectcircle3.removeClass('active');
+
+      // Sec2 h2를 보이고, 투영하게    
+      Sec2title.addClass('active');
+      Sec2title.css({
         'color': 'transparent',
         'text-shadow': '0 0 10px rgba(255,255,255,0.8)'  // 글자 투영 효과
       }); // 수정          

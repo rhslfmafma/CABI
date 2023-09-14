@@ -51,12 +51,17 @@ iframe.active {
 
 .Sec2 h2 {
   color: #fff !important;
-  padding-top: 228px;
+  padding-top: 620px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.Sec2 h2.active {
+  opacity: 1;
 }
 
 .object {
   position: absolute;
-  top: 35%;
+  top: 28%;
   left: 46%;
   transform: translate(-50%, -50%);
 
