@@ -47,17 +47,7 @@ $(window).scroll(function(){
 AOS.init();
 
 /* section5*/
-let square = $('.cube')
-let cubeparent = square.parent();
-let cubeparentX = cubeparent.offset().left + cubeparent.width() /2;
-let cubeparentY = cubeparent.offset().top + cubeparent.height() /2;
-let sensitivity = 10;
-
-let targetrotationX = 0;
-let targetrotationY = 0;
-let currentrotationX = 0;
-let currentrotationY = 0;
-
+let square = $('.cube'); //변수명지정
 
 // TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
 
@@ -74,35 +64,22 @@ $('.cavicircle span').each(function(index) {
   })
 })
 
+let cubeparent = square.parent();
+let cubeparentY = cubeparent.offset().top + cubeparent.height() /2;
 
-cubeparent.mousemove(function(event){
-  let mouseX = event.clientX - cubeparentX;
-  let mouseY = event.clientY - cubeparentY;
+function rotateCube(e) {
+  // TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
+  let cubeparentX = e.clientX - cubeparent.offset().left - cubeparent.width() / 2 ;
+  let cubeparentY = e.clientY - cubeparent.offset().top - cubeparent.height() / 2 ;
+  let q = 0.15;
 
-  let rotationX = (mouseX - cubeparent.height()/ 2) / sensitivity;
-  let rotationY = (mouseY - cubeparent.width()/ 2) / sensitivity;
-  animateRotation();
-  });
-
-  function animateRotation() {
-    let diffX = targetrotationX - currentrotationX;
-    let diffY = targetrotationY - currentrotationY;
-    
-    currentrotationX += diffX * 0.1;
-    currentrotationY += diffY * 0.1;
+  let cubeRotateX = cubeparentY * q;
+  let cubeRotateY = cubeparentX * q;
   
-    square.css({
-      transform: 'rotateX(' + currentrotationX + 'deg) rotateY(' + currentrotationY + 'deg)'
+  square.css({
+      transform: 
+      'rotateX(' + cubeRotateX + 'deg) rotateY(' + cubeRotateY + 'deg)'
     });
-    requestAnimationFrame(animateRotation);
 }
 
-cubeparent.mouseleave(function(){
-  targetrotationX = 0;
-  targetrotationY = 0;
-  animateRotation();
-});
-
-cubeparent.mouseenter(function(){
-  animateRotation();
-});
+$(document).mousemove(rotateCube);
