@@ -79,7 +79,7 @@
   let autoRotateInterval;
 
 
-  TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
+  // TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
 
   //자동회전 함수 
   // autoRotate 함수는 마우스가 요소 위에 올려져 있지 않을 때, cube를 3초에 한 번씩 360도씩 회전시킵니다.

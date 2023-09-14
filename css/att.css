@@ -104,6 +104,7 @@ iframe.active {
   font-weight: bold;
 }
 
+
 .Sec3_title {
   color: var(--Main-Color, #272727);
   font-family: Inter;
@@ -112,42 +113,25 @@ iframe.active {
   font-weight: 400;
   line-height: 30px; /* 57.692% */
 }
+.Sec3_introtxt .vertical_bar {
+  padding:  0px 49px;
+}
+
+
+.Sec3 figure {
+  margin: 300px 15px;
+}
 
 .bluetitle {
   color: #17407E;
 }
 
-.Sec3_introtxt .vertical_bar {
-  padding:  0px 49px;
-}
-.Sec3 .figure01 {
-  padding: 0px 446px 300px 299px;
-  position: relative;
-  margin-left: 150px;
-}
-.Sec3 .figure02 {
-  padding: 0px 306px 288px 526px;
-  position: relative;
-  margin-left: -250px;
-
-}
-.Sec3 .figure03 {
-  padding: 0px 396px 304px 417px;
-  position: relative;
-}
-.Sec3 .figure04 {
-  padding: 0px 335px 305px 299px;
-  position: relative;
-  margin-left: 50px;
-
-}
 
 .figure_textgroup {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(950px, -2%);
-  padding: 0px 54px;
+  padding: 0px 11px;
 }
 .figure_textgroup h1 {
 padding-bottom: 32px;
@@ -159,16 +143,56 @@ display: block;
   line-height: 60px !important;
 }
 .figure_textgroup .subtext {
-  padding-top: 22%;
+  padding-top: 150px;
+}
+.figure02_textgroup .subtext {
+  padding-top: 55px;
+}
+
+.Sec3 .figure01 {
+  position: relative;
+  padding-left: 200px;
+}
+.Sec3 figure img{
+  padding: 0px 111px;
+}
+
+.figure01_textgroup {
+  margin-left: 968px;
+  padding-left: 54px;
+}
+.Sec3 .figure02 img{
+  padding: 0px 870px;
 }
 .figure02 img {
-  padding-left: 39%;
+  transform: scale(-20px);
+}
+.Sec3 .figure02 {
+  position: relative;
+  margin-left: 280px;
 }
 .figure02_textgroup {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(388px, 0px);
+  padding-left: 23%;
+}
+.Sec3 .figure03 {
+  position: relative;
+  margin-left: 15%;
+
+}
+.figure03_textgroup {
+  padding-left: 39%;
+}
+
+.figure04 img {
+  transform: translateX(481px);
+}
+.figure04_textgroup {
+  padding-left: 12%;
+}
+.Sec3 .figure04 {
+  padding: 0px 335px 305px 299px;
+  position: relative;
+  margin-left: 50px;
 }
 
 .Sec4 {
