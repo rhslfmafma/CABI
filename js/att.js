@@ -17,10 +17,12 @@
 $(window).scroll(function(){    
   let scrollTop = $(window).scrollTop();    //윈도우 객체의 scrollY속성을 사용하여 스크롤 양을 로드
   let textopacity = 1 - (scrollTop / 500); //  // 500으로 나눈 값의 차이를 이용하여 textopacity 값을 계산합니다.
+  console.log('스크롤 양: ' + scrollTop);    
+
 
   // 스크롤 양이 이전 스크롤 양보다 큰 경우
-  if (scrollTop > scrollmat) {        
-      console.log('스크롤 양: ' + scrollTop);     
+  if (scrollTop > scrollmat) {       
+       
     // scale과 translateY 값을 각각 0.01씩 증가시킵니다.
     scale-= 0.04;
     translateY -=0.01;
@@ -34,21 +36,12 @@ $(window).scroll(function(){
         'text-shadow': '0 0 10px rgba(255,255,255,0.8)'  // 글자 투영 효과
       }); // 수정
   } else {    
-    console.log('스크롤 양: ' + scrollTop);      
-    VideoContainertext.css('transform', 'none');      
-    // $('.Sec2 h2').css({
-    //   'color':'rgba(0, 0, 0, 1)',
-    //   'text-shadow': 'none'  // 글자 투영 효과
-    // }); // 수정 
-    // }
+  
 
-    // 현재 스크롤 양을 이전 스크롤 양으로 업데이트합니다.
-    scrollmat = scrollTop;
-
-    if (scrollTop > 615) {
-      VideoContainertext.hide();
-      videoiframe.css('visibility', 'visible').fadeIn(200000);
-    }
+  }
+  if (scrollTop > 200) {
+    VideoContainertext.hide();
+    videoiframe.addClass('active');
   }
 });
 

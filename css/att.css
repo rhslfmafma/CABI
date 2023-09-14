@@ -10,10 +10,15 @@ iframe {
   width: 100%;  
   height: 980px;
   visibility: hidden;
+  opacity: 0;
   transition: 0.5s;
-
 }
+iframe.active {
 
+  visibility: visible;
+
+  opacity: 1;
+}
 .Sec1 {
   height: 200vh;
 }
