@@ -4,10 +4,12 @@
     각 메인 메뉴의 글자색 흰색으로 변경 
   아니라면, 클래스 sticky 삭제 후, 원래대로 변경*/
 
-  let VideoContainertext = $('.VideoContainer h2');  
+  let VideoContainertext = $('.VideoContainer h2'); 
+  let videoiframe = $('iframe');
   let scrollmat = 0;
-  let scale = 0.8;
-  let translateY = -50;
+  let scale = 1;
+  let translateY = -0.8;
+  let translateX = -8;
 
 // 주어진 코드는 윈도우를 스크롤할 때 발생하는 이벤트 핸들러입니다.
 $(window).scroll(function(){    
@@ -18,11 +20,12 @@ $(window).scroll(function(){
   if (scrollTop > scrollmat) {        
       console.log('스크롤 양: ' + scrollTop);     
     // scale과 translateY 값을 각각 0.01씩 증가시킵니다.
-    scale+= 0.01;
-    translateY +=1;
+    scale-= 0.02;
+    translateY -=0.01;
+    translateX -=20;
 
     // VideoContainertext 요소에 transform 속성을 적용합니다.
-    VideoContainertext.css({'transform':`scale(${scale}) translateY(${translateY}%)`});
+    VideoContainertext.css({'transform':`scale(${scale}) translateY(${translateY}px) translateX(${translateX}px)`});
     // Sec2 h2를 투영하게    
     $('.Sec2 h2').css({
         'color': 'transparent',
@@ -40,8 +43,14 @@ $(window).scroll(function(){
 
     // 현재 스크롤 양을 이전 스크롤 양으로 업데이트합니다.
     scrollmat = scrollTop;
+
+    if (scrollTop > 400) {
+      VideoContainertext.hide();
+      videoiframe.css('visibility', 'visible').fadeIn(200000);
+    }
 });
   
+
 
 
 // AOS.init();
@@ -49,7 +58,6 @@ $(window).scroll(function(){
 /* section5*/
 
 
-// TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
 
 let numLinks = $('.cavicircle span').length;
 let angle = 360 / numLinks;
@@ -65,32 +73,30 @@ $('.cavicircle span').each(function(index) {
 
 let square = $('.cube'); // 원형 변수선택
 let cubeparent = square.parent(); //원형 부모요소선택
-let isHoverd = false; //마우스가 요소 위 올려져있는 지 여부 저장 변수
+let isHovered = false; //마우스가 요소 위 올려져있는 지 여부 저장 변수
 let autoRotateInterval;
 
 
-// TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
+TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
 
 //자동회전 함수 
 // autoRotate 함수는 마우스가 요소 위에 올려져 있지 않을 때, cube를 3초에 한 번씩 360도씩 회전시킵니다.
 // function autoRotate() {
-//   if (!isHoverd) {
+//   if (!isHovered) {
 //   TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
 //   }
 // }
 // 자동회전 함수
 function autoRotate() {
-  autoRotateInterval = setInterval(function() {
-    if (!isHovered) {
-      TweenMax.to(square, 3, { rotation: "+=360", ease: Linear.easeNone });
-    }
+  autoRotateInterval = setInterval(() => {
+    TweenMax.to(square, 3, { rotation: "+=360", ease: Linear.easeNone });
   }, 3000);
 }
-
-// StopautoRotate 함수는 isHovered 변수를 true로 변경하여 자동 회전을 멈춥니다.
-function StopautoRotate() {
-  clearInterval(autoRotateInterval);
+function StopRotate() {
+      TweenMax.to(square, 3, { rotation: "+=360", ease: Linear.easeNone, Paused : true });
 }
+
+
 
 //커서에 따라 회전하는 함수
 // rotateCube 함수는 마우스의 위치에 따라 cube를 회전시킵니다.
@@ -113,18 +119,19 @@ autoRotate();
 
 //원형에 마우스 호버 시 stopautorotate 함수 실행
 square.mouseenter(function(e){
-  isHoverd = true;
-  StopautoRotate();
-  rotateCube(e);
+  isHovered = true;
+  StopRotate();
+  // rotateCube(e);
+  clearInterval(autoRotateInterval);
 });
 
-//원형에 마우스 빠져나가면 isHoverd변수를 false로 설정 후 자동 회전 다시 시작
+//원형에 마우스 빠져나가면 isHovered변수를 false로 설정 후 자동 회전 다시 시작
 square.mouseleave(function(){
-  isHoverd = false;
-  autoRotate();
+  isHovered = false;
+  // autoRotate();
 });
 
 // rotateCube 함수는 마우스 위치에 따라 cube를 회전시킵니다.
 $(document).mousemove(function(e){
-  rotateCube(e);
+  // rotateCube(e);
 });
