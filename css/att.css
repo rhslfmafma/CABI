@@ -45,6 +45,7 @@ iframe.active {
   text-align: center;
   vertical-align: middle;
   position: relative;
+  overflow: hidden;
 }
 
 .Sec2 h2 {
@@ -96,6 +97,9 @@ iframe.active {
   opacity: 1;  
 }
 
+.Sec3 {
+  overflow: hidden;
+}
 
 .Sec3_introtxt {
   padding: 48px 120px 120px;
@@ -104,6 +108,9 @@ iframe.active {
   font-weight: bold;
 }
 
+span.blockspan {
+  display: block;
+}
 
 .Sec3_title {
   color: var(--Main-Color, #272727);
@@ -119,7 +126,7 @@ iframe.active {
 
 
 .Sec3 figure {
-  margin: 300px 15px;
+  margin: 300px 15px 0px;
 }
 
 .bluetitle {
@@ -133,20 +140,23 @@ iframe.active {
   left: 0;
   padding: 0px 11px;
 }
-.figure_textgroup h1 {
+.figure_textgroup h2 {
 padding-bottom: 32px;
 }
-.figure_textgroup > p span {
-display: block;
-}
-.figure_textgroup h2 {
+.figure_textgroup h3 {
   line-height: 60px !important;
 }
-.figure_textgroup .subtext {
+.figure01_textgroup .subtext {
   padding-top: 150px;
 }
 .figure02_textgroup .subtext {
-  padding-top: 55px;
+  padding-top: 320px;
+}
+.figure03_textgroup .subtext {
+  padding-top: 298px;
+}
+.figure04_textgroup .subtext {
+  padding-top: 160px;
 }
 
 .Sec3 .figure01 {
@@ -156,38 +166,40 @@ display: block;
 .Sec3 figure img{
   padding: 0px 111px;
 }
+.Sec3 .figure03 img {
+  padding: 0px 451px;
+}
+.Sec3 .figure04 img {
+  padding: 0px 451px;
+}
 
 .figure01_textgroup {
   margin-left: 968px;
   padding-left: 54px;
 }
-.Sec3 .figure02 img{
-  padding: 0px 870px;
-}
-.figure02 img {
-  transform: scale(-20px);
+
+.Sec3 .figure02_imgs  {
+  padding-left: 1250px;
 }
 .Sec3 .figure02 {
   position: relative;
-  margin-left: 280px;
 }
 .figure02_textgroup {
-  padding-left: 23%;
+  padding-left: 40%;
 }
 .Sec3 .figure03 {
   position: relative;
-  margin-left: 15%;
 
 }
 .figure03_textgroup {
-  padding-left: 39%;
+  padding-left: 48%;
 }
 
 .figure04 img {
-  transform: translateX(481px);
+  transform: translateX(331px);
 }
 .figure04_textgroup {
-  padding-left: 12%;
+  padding-left: 18%;
 }
 .Sec3 .figure04 {
   padding: 0px 335px 305px 299px;
@@ -195,9 +207,22 @@ display: block;
   margin-left: 50px;
 }
 
+
+[data-aos=fade-right] {
+  transform: translate3d(-300px,0,0);
+}
+[data-aos=fade-left] {
+  transform: translate3d(300px,0,0);
+}
+[data-aos=fade-up] {
+  transform: translate3d(0,300px,0);
+}
+[data-aos=fade-down] {
+  transform: translate3d(0,-300px,0);
+}
+
 .Sec4 {
   background: #17407E;
-  width: 1920px;
   height: 853px;
   text-align: center;
 }
@@ -227,6 +252,7 @@ font-size: 100px;
   margin-top: 287px;
   text-align: center;
   perspective: 200px; /* 더 높은 값으로 설정할 수도 있습니다. */
+  overflow: hidden;
 }
 
 .Sec5 .wrapper h3 {
@@ -273,7 +299,7 @@ font-size: 100px;
 .Sec6 {
   text-align: center;
 }
-.Sec6 div h1 {
+.Sec6 div h2 {
   color: #17407E;
 }
 
@@ -306,10 +332,10 @@ font-size: 100px;
 .Sec9 {
   padding-bottom: 558px;
   text-align: center;
+  overflow: hidden;
 }
 
 .Cavibg {
-  width: 1916px;
   height: 485px;
   background-color: #17407E;
   padding: 110px 434px;

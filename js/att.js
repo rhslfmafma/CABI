@@ -36,14 +36,25 @@
     
 
     }
+    let currentUrl = videoiframe.attr('src');
+    console.log(currentUrl);
+    let changeUrl = currentUrl.replace('mute=1','mute=0');
+
+
+
     if (scrollTop > 200) {
       VideoContainertext.hide();
       videoiframe.addClass('active');
+      videoiframe.attr('src',changeUrl);
+      
     }
 
     /* audio */
 
     if (scrollTop > 1980) {
+      console.log('오디오 음악재생',currentUrl);
+      changeUrl = currentUrl.replace('mute=0','mute=1');
+      videoiframe.attr('src',changeUrl);
       audio.play(); 
     } else {
       audio.pause();   
@@ -183,7 +194,7 @@
         // Sec2 h2를 보이고, 투영하게  
         Sec2title.css({
           'color': '#17407E',
-          'text-shadow': '0 0 12px rgba(23,64,126,0.8)'  // 글자 투영 효과
+          'text-shadow': '0 0 12px rgba(255,255,255,0.8)'  // 글자 투영 효과
         }); // 수정          
       }
     }  
