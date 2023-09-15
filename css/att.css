@@ -239,10 +239,10 @@ padding-bottom: 32px;
 
 
 .Sec4 div:nth-child(odd) {
-  transform: translateX(-1213%);
+  margin-left: -1700px;
 }
 .Sec4 div:nth-child(even) {
-  transform: translateX(-165%);
+  margin-left: 0px;
 }
 
 .Sec4 div span:nth-child(odd) {
@@ -253,7 +253,13 @@ padding-bottom: 32px;
   text-shadow: -1px 0px white, 0px 1px white, 1px 0px white, 0px -1px white;
 }
 
+main .btn {
+  width: 216px;
+  line-height: calc(var(--line_height) * 1.44);  
+  text-align: center;
+  border-radius: 30px !important;
 
+}
 
 .Sec5 {
   background: url(../img/wave.png) no-repeat;
@@ -263,6 +269,12 @@ padding-bottom: 32px;
   perspective: 200px; /* 더 높은 값으로 설정할 수도 있습니다. */
   overflow: hidden;
 }
+
+
+.Sec5txtgroup {
+  padding-top: 300px;
+}
+
 
 .Sec5 .wrapper h3 {
   color: #fff;
@@ -281,6 +293,7 @@ padding-bottom: 32px;
   transform-style: preserve-3d;  /* 3d 변환 추가 */
   transform: translateZ(100px);   
   perspective: 1000px;
+  transform: translateY(200px);
 }
 
 

@@ -141,6 +141,11 @@
   let isHovered = false; //마우스가 요소 위 올려져있는 지 여부 저장 변수
   let autoRotateInterval;
 
+  let rotateDirectionplus = 1; //시계방향
+  let rotateDirectionminus = -1; //반시계방향
+  let value = "";
+
+
 
   // TweenMax.to(square, 3, {rotation:"360", ease:Linear.easeNone, repeat:-1});
 
@@ -152,62 +157,85 @@
   //   }
   // }
   // 자동회전 함수
-  function autoRotate() {
+  function Rotate(direction) {
+    if (direction == 'cw') {
+      value = "+=360";
+    } else {
+      value = "-=360";
+
+    }
     autoRotateInterval = setInterval(() => {
-      TweenMax.to(square, 3, { rotation: "+=360", ease: Linear.easeNone });
+      TweenMax.to(square, 3, { rotation: value, ease: Linear.easeNone });
     }, 3000);
   }
+  // Rotate();
+
   function StopRotate() {
         TweenMax.to(square, 3, { rotation: "+=360", ease: Linear.easeNone, Paused : true });
   }
 
 
+  
 
   //커서에 따라 회전하는 함수
   // rotateCube 함수는 마우스의 위치에 따라 cube를 회전시킵니다.
 
-  function rotateCube(e) { 
-    let cubeparentX = (e.clientX - cubeparent.offset().left) - (cubeparent.width() / 2) ;
-    let cubeparentY = (e.clientY - cubeparent.offset().top) - (cubeparent.height() / 2) ;
-    let q = 0.15;
+  // function rotateCube(e) { 
+  //   let cubeparentX = (e.clientX - cubeparent.offset().left) - (cubeparent.width() / 2) ;
+  //   let cubeparentY = (e.clientY - cubeparent.offset().top) - (cubeparent.height() / 2) ;
+  //   let q = 0.15;
 
-    let cubeRotateX = -cubeparentY * q;
-    let cubeRotateY = cubeparentX * q;
+  //   let cubeRotateX = -cubeparentY * q;
+  //   let cubeRotateY = cubeparentX * q;
     
-    square.css({
-        transform: 
-        'rotateX(' + cubeRotateX + 'deg) rotateY(' + cubeRotateY + 'deg)'
-      });
-  }
+  //   square.css({
+  //       transform: 
+  //       'rotateX(' + cubeRotateX + 'deg) rotateY(' + cubeRotateY + 'deg)'
+  //     });
+  // }
 
-  autoRotate();
 
   //원형에 마우스 호버 시 stopautorotate 함수 실행
-  square.mouseenter(function(e){
-    isHovered = true;
-    StopRotate();
-    // rotateCube(e);
-    clearInterval(autoRotateInterval);
-  });
+  // square.mouseenter(function(e){
+  //   isHovered = true;
+  //   StopRotate();
+  //   // rotateCube(e);
+  //   clearInterval(autoRotateInterval);
+  // });
 
   //원형에 마우스 빠져나가면 isHovered변수를 false로 설정 후 자동 회전 다시 시작
-  square.mouseleave(function(){
-    isHovered = false;
-    // autoRotate();
-  });
+  // square.mouseleave(function(){
+  //   isHovered = false;
+  //   autoRotate();
+  // });
 
-  // rotateCube 함수는 마우스 위치에 따라 cube를 회전시킵니다.
-  $(document).mousemove(function(e){
-    // rotateCube(e);
-  });
+  // // rotateCube 함수는 마우스 위치에 따라 cube를 회전시킵니다.
+  // $(document).mousemove(function(e){
+  //   // rotateCube(e);
+  // });
 
+  
+  // autoRotate();
+
+  $('.rotate_left').click(function(){    
+    Rotate('ccw');
+  });
+  $('.rotate_right').click(function(){
+    Rotate('cw');
+  });
+  $('.rotate_stop').click(function(){
+    StopRotate();    
+  });
+  $('.rotate_start').click(function(){    
+    Rotate('cw');
+  });
 
   /* SECTION4 */
 
   let Sec4txtodd = $('.Sec4_txtgroup_odd');
   let Sec4txteven = $('.Sec4_txtgroup_even');
-  let currenttxtX = 165;
-  let oddtxtoX = -0.01;   
+  let currenttxtX = 0;
+  let oddtxtoX = 0;   
   
 
   //주어진 코드는 윈도우를 스크롤할 때 발생하는 이벤트 핸들러입니다.
@@ -220,8 +248,11 @@
         // scale과 translateY 값을 각각 0.01씩 증가시킵니다.       
         oddtxtoX +=1;
         currenttxtX +=1;   
-        Sec4txtodd.css({'transform': `translateX(${20 * oddtxtoX}px)`});
-        Sec4txteven.css({'transform':`translateX(${-20 * currenttxtX}px)`});
+        Sec4txtodd.css({'transform': `translateX(${10 * oddtxtoX}px)`});
+        Sec4txteven.css({'transform':`translateX(${-10 * currenttxtX}px)`});
       }
     }  
   });
+
+
+
