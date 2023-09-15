@@ -416,10 +416,35 @@ font-size: 56px;
 font-style: normal;
 font-weight: 600;
 line-height: 60px; /* 107.143% */
+padding: 67px 550px;
 }
 
 .Sec6 h2 {
   color: #17407E !important;
+}
+
+.Sec6 .multiple-slider .slick-arrow {
+ position: absolute; 
+ top:40%;
+
+}
+.Sec6 .multiple-slider .slick-prev {
+  transform: translateX(-940px) !important;
+  z-index: 1;
+}
+.Sec6 .multiple-slider .slick-next {
+  transform: translateX(900px) !important;
+}
+
+.Sec6 .multiple-slider div img {
+position: relative;
+}
+
+.Sec6 .multiple-slider .slick-slide h4 {
+position: absolute;
+top:50%;
+left: 50%;
+color: #FFF;
 }
 
 .Sec7_options li {

@@ -278,7 +278,7 @@
     let scrollTop = $(window).scrollTop();    //윈도우 객체의 scrollY속성을 사용하여 스크롤 양을 로드  
     // 스크롤 양이 이전 스크롤 양보다 큰 경우
     if (scrollTop > scrollmat) {       
-      if (scrollTop > 6916) {
+      if (scrollTop > 6800) {
         console.log('텍스트 스크롤 작동');
         // scale과 translateY 값을 각각 0.01씩 증가시킵니다.       
         oddtxtoX +=1;
@@ -290,4 +290,12 @@
   });
 
 
-
+ /* SECTION6 */
+ $('.multiple-slider').slick({
+  infinite: true,
+  slidesToShow: 7,
+  slidesToScroll: 1,
+  dots: true, // 페이저 (도트) 활성화
+    prevArrow: '<button type="button" class="slick-prev">Previous</button>', // 이전 버튼 커스텀
+    nextArrow: '<button type="button" class="slick-next">Next</button>' // 다음 버튼 커스텀
+});
