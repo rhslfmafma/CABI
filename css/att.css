@@ -60,7 +60,7 @@ iframe.active {
 
 .object {
   position: absolute;
-  top: 28%;
+  top: 38%;
   left: 46%;
   transform: translate(-50%, -50%);
 
@@ -224,27 +224,36 @@ padding-bottom: 32px;
 .Sec4 {
   background: #17407E;
   height: 853px;
-  text-align: center;
+  overflow: hidden;
+  padding: 112px 0px;
+}
+.Sec4_txtgroup {
+  gap:40px;
+}
+.Sec4_txtgroup span {
+  white-space: nowrap;
+  padding: 0px 69px;
+  font-size: 100px;
+  padding: 44px 0px;
 }
 
-.Sec4 div {  
-  padding: 112px 0 117px;  
+
+.Sec4 div:nth-child(odd) {
+  transform: translateX(-1213%);
+}
+.Sec4 div:nth-child(even) {
+  transform: translateX(-165%);
 }
 
-.Sec4 div span {
-text-align: center;
-font-size: 100px;
-}
-
-.Sec4 div p {
-  padding-bottom: 100px;
-}
 .Sec4 div span:nth-child(odd) {
   color: #fff;
 }
 .Sec4 div span:nth-child(even) {
-  color: #000;
+  color: #17407E;
+  text-shadow: -1px 0px white, 0px 1px white, 1px 0px white, 0px -1px white;
 }
+
+
 
 .Sec5 {
   background: url(../img/wave.png) no-repeat;

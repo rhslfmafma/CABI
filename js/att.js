@@ -33,35 +33,87 @@
       VideoContainertext.css({'transform':`scale(${scale}) translateY(${translateY}px) translateX(${translateX}px)`});
 
     } else {    
-    
-
     }
+
+    //비디오 src mute 변경 (소리 off)
     let currentUrl = videoiframe.attr('src');
-    console.log(currentUrl);
     let changeUrl = currentUrl.replace('mute=1','mute=0');
 
-
-
+    //스크롤 200보다 크면, 텍스트 out, 비디오 in(소리 on)
     if (scrollTop > 200) {
       VideoContainertext.hide();
       videoiframe.addClass('active');
-      videoiframe.attr('src',changeUrl);
-      
+      videoiframe.attr('src',changeUrl);      
     }
 
     /* audio */
 
+    //스크롤 19800보다 크면, 비디오 out (소리 off), 오디오 in(소리 on)
     if (scrollTop > 1980) {
       console.log('오디오 음악재생',currentUrl);
       changeUrl = currentUrl.replace('mute=0','mute=1');
       videoiframe.attr('src',changeUrl);
       audio.play(); 
     } else {
+      //오디오 out(소리 off)
       audio.pause();   
     }
 
   });
 
+
+  /* SECTION2 */
+
+  let objectcircles = $('.object div');
+  let objectcircle1 = objectcircles.eq(0);
+  let objectcircle2 = objectcircles.eq(1);
+  let objectcircle3 = objectcircles.eq(2);
+  let  oX = 0;
+  let  oY = 0;
+  let Sec2title = $('.Sec2 h2');
+
+  // 주어진 코드는 윈도우를 스크롤할 때 발생하는 이벤트 핸들러입니다.
+  $(window).scroll(function(){    
+    let scrollTop = $(window).scrollTop();    //윈도우 객체의 scrollY속성을 사용하여 스크롤 양을 로드  
+    // 스크롤 양이 이전 스크롤 양보다 큰 경우
+    if (scrollTop > scrollmat) {       
+      if (scrollTop > 1899) {
+        objectcircle1.addClass('active');
+        objectcircle2.addClass('active');
+        objectcircle3.addClass('active');
+      }
+      if (scrollTop > 1900) {
+        console.log('작동');
+        // scale과 translateY 값을 각각 0.01씩 증가시킵니다.
+        if (oX < 168) {
+          oX +=1;   
+          oY +=1;   
+          objectcircle1.css({'transform': `translateY(${-20 * oY}px) translateX(${20 * oX}px)`});
+          objectcircle2.css({'transform': `translateY(${-20 * oY}px) translateX(${-20 * oX}px)`});
+          objectcircle3.css({'transform': `translateY(${20 * oY}px) translateX(${-20 * oX}px)`});  
+        } 
+      }
+      if (scrollTop > 2140) {
+        objectcircle1.removeClass('active');
+        objectcircle2.removeClass('active');
+        objectcircle3.removeClass('active');
+
+        // Sec2 h2를 보이고, 투영하게    
+        Sec2title.addClass('active');
+      }
+      if (scrollTop > 2237) {
+        // Sec2 h2를 보이고, 투영하게  
+        Sec2title.css({
+          'color': 'rgba(255, 255, 255, 0)',
+          'text-shadow': '0 0 12px rgba(255,255,255,0.8)'  // 글자 투영 효과
+        }); // 수정          
+      }
+    }  
+  });
+
+  
+
+  /* SECTION3 */
 
   AOS.init({
     duration: 1200,
@@ -150,54 +202,26 @@
   });
 
 
+  /* SECTION4 */
 
-  /* SECTION2 */
+  let Sec4txtodd = $('.Sec4_txtgroup_odd');
+  let Sec4txteven = $('.Sec4_txtgroup_even');
+  let currenttxtX = 165;
+  let oddtxtoX = 0.01;   
+  
 
-  let objectcircles = $('.object div');
-  let objectcircle1 = objectcircles.eq(0);
-  let objectcircle2 = objectcircles.eq(1);
-  let objectcircle3 = objectcircles.eq(2);
-  let  oX = 0;
-  let  oY = 0;
-  let Sec2title = $('.Sec2 h2');
-
-  // 주어진 코드는 윈도우를 스크롤할 때 발생하는 이벤트 핸들러입니다.
+  //주어진 코드는 윈도우를 스크롤할 때 발생하는 이벤트 핸들러입니다.
   $(window).scroll(function(){    
     let scrollTop = $(window).scrollTop();    //윈도우 객체의 scrollY속성을 사용하여 스크롤 양을 로드  
     // 스크롤 양이 이전 스크롤 양보다 큰 경우
     if (scrollTop > scrollmat) {       
-      if (scrollTop > 1899) {
-        objectcircle1.addClass('active');
-        objectcircle2.addClass('active');
-        objectcircle3.addClass('active');
-      }
-      if (scrollTop > 1900) {
-        console.log('작동');
-        // scale과 translateY 값을 각각 0.01씩 증가시킵니다.
-        if (oX < 168) {
-          oX +=1;   
-          oY +=1;   
-          objectcircle1.css({'transform': `translateY(${-20 * oY}px) translateX(${16 * oX}px)`});
-          objectcircle2.css({'transform': `translateY(${-20 * oY}px) translateX(${-16 * oX}px)`});
-          objectcircle3.css({'transform': `translateY(${20 * oY}px) translateX(${-20 * oX}px)`});  
-        } 
-      }
-      if (scrollTop > 2140) {
-        objectcircle1.removeClass('active');
-        objectcircle2.removeClass('active');
-        objectcircle3.removeClass('active');
-
-        // Sec2 h2를 보이고, 투영하게    
-        Sec2title.addClass('active');
-      }
-      if (scrollTop > 2237) {
-        // Sec2 h2를 보이고, 투영하게  
-        Sec2title.css({
-          'color': '#17407E',
-          'text-shadow': '0 0 12px rgba(255,255,255,0.8)'  // 글자 투영 효과
-        }); // 수정          
+      if (scrollTop > 6916) {
+        console.log('텍스트 스크롤 작동');
+        // scale과 translateY 값을 각각 0.01씩 증가시킵니다.       
+        oddtxtoX -=1;
+        currenttxtX +=1;   
+        Sec4txtodd.css({'transform': `translateX(${-20 * oddtxtoX}px)`});
+        Sec4txteven.css({'transform':`translateX(${-20 * currenttxtX}px)`});
       }
     }  
   });
-
-  
