@@ -207,7 +207,7 @@
   let Sec4txtodd = $('.Sec4_txtgroup_odd');
   let Sec4txteven = $('.Sec4_txtgroup_even');
   let currenttxtX = 165;
-  let oddtxtoX = 0.01;   
+  let oddtxtoX = -0.01;   
   
 
   //주어진 코드는 윈도우를 스크롤할 때 발생하는 이벤트 핸들러입니다.
@@ -218,9 +218,9 @@
       if (scrollTop > 6916) {
         console.log('텍스트 스크롤 작동');
         // scale과 translateY 값을 각각 0.01씩 증가시킵니다.       
-        oddtxtoX -=1;
+        oddtxtoX +=1;
         currenttxtX +=1;   
-        Sec4txtodd.css({'transform': `translateX(${-20 * oddtxtoX}px)`});
+        Sec4txtodd.css({'transform': `translateX(${20 * oddtxtoX}px)`});
         Sec4txteven.css({'transform':`translateX(${-20 * currenttxtX}px)`});
       }
     }  
