@@ -119,6 +119,21 @@
     duration: 1200,
     easing: 'ease-in-out-back'
   });
+
+  let Sec3_introtxt = $('.Sec3_introtxt');
+  $(window).scroll(function(){    
+    let scrollTop = $(window).scrollTop();    //윈도우 객체의 scrollY속성을 사용하여 스크롤 양을 로드  
+    // 스크롤 양이 이전 스크롤 양보다 큰 경우
+    if (scrollTop > scrollmat) {       
+      if (scrollTop > 2672) {        
+        Sec3_introtxt.css({
+          opacity:'1'
+        })
+      } 
+    }  
+  });
+
+
   /* SECTION5 */
 
 
@@ -168,10 +183,9 @@
       TweenMax.to(square, 3, { rotation: value, ease: Linear.easeNone });
     }, 3000);
   }
-  // Rotate();
 
   function StopRotate() {
-        TweenMax.to(square, 3, { rotation: "+=360", ease: Linear.easeNone, Paused : true });
+    clearInterval(autoRotateInterval);
   }
 
 
@@ -217,18 +231,39 @@
   
   // autoRotate();
 
-  $('.rotate_left').click(function(){    
-    Rotate('ccw');
+
+
+
+  $('.rotate_left').dblclick(function(){           
+    square.removeAttr('class');
+    square.addClass('cube ccw2');
+  });
+  $('.rotate_right').dblclick(function(){
+    square.removeAttr('class');
+    square.addClass('cube cw2');
+  });
+  $('.rotate_left').click(function(){       
+    square.removeAttr('class');
+    square.addClass('cube ccw');
   });
   $('.rotate_right').click(function(){
-    Rotate('cw');
+    square.removeAttr('class');
+    square.addClass('cube cw');
   });
+  
+  $('.cube').click(function(){    
+    $(this).toggleClass('cw');      
+  });
+  
   $('.rotate_stop').click(function(){
     StopRotate();    
   });
-  $('.rotate_start').click(function(){    
+  $('.rotate_start').click(function(){        
     Rotate('cw');
   });
+
+
+
 
   /* SECTION4 */
 

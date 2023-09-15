@@ -103,6 +103,8 @@ iframe.active {
 
 .Sec3_introtxt {
   padding: 48px 120px 120px;
+  opacity: 0;
+  transition: 0.5s;
 }
 .Sec3_introtxt span:first-child {
   font-weight: bold;
@@ -192,7 +194,7 @@ padding-bottom: 32px;
 
 }
 .figure03_textgroup {
-  padding-left: 48%;
+  padding-left: 53%;
 }
 
 .figure04 img {
@@ -258,6 +260,7 @@ main .btn {
   line-height: calc(var(--line_height) * 1.44);  
   text-align: center;
   border-radius: 30px !important;
+  display: block;
 
 }
 
@@ -268,13 +271,46 @@ main .btn {
   text-align: center;
   perspective: 200px; /* 더 높은 값으로 설정할 수도 있습니다. */
   overflow: hidden;
+  text-align: center;
 }
 
 
 .Sec5txtgroup {
   padding-top: 300px;
+  gap: 80px;  
+  margin-left: 190px;
+
+}
+.Sec5txtgroup a {
+color: #fff;
+
 }
 
+.Sec5btn_01 {
+  background-color: #F54F4F;
+}
+.Sec5btn_02 {
+  background-color: #F63AEC;
+}
+.Sec5btn_03 {
+  background-color: #36B0EB;
+}
+
+.Sec5btn_01:hover {
+  background-color: #AF1919;
+  color: #fff;
+
+}
+.Sec5btn_02:hover {
+  background-color: #E623BE;
+  color: #fff;
+
+}
+.Sec5btn_03:hover {
+  background-color: #1A96DB;
+  color: #fff;
+
+}
 
 .Sec5 .wrapper h3 {
   color: #fff;
@@ -288,16 +324,34 @@ main .btn {
   z-index: 1;
   width: 860px;
   height: 790px;
+  top: 140px;
   left: 13%;
-  transform-origin: center center;  
-  transform-style: preserve-3d;  /* 3d 변환 추가 */
-  transform: translateZ(100px);   
-  perspective: 1000px;
-  transform: translateY(200px);
+  transform-origin: center center;      
 }
 
+.Sec5 .cube.cw {
+  animation: cwrotate 3s linear infinite   ;
+}
 
+.Sec5 .cube.ccw {
+  animation: ccwrotate 3s linear infinite   ;
+}
+.Sec5 .cube.cw2 {
+  animation: cwrotate 1.5s linear infinite   ;
+}
 
+.Sec5 .cube.ccw2 {
+  animation: ccwrotate 1.5s linear infinite   ;
+}
+
+@keyframes cwrotate {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}  
+}
+@keyframes ccwrotate {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(-360deg);}  
+}
 
 .Sec5 .cube span {
   position: absolute;
@@ -318,11 +372,54 @@ main .btn {
   top: 70%;
   left: 49%;
 }
+
+
+.fa-solid {
+  font-size: calc(var(--font_size) * 5);
+  font-weight: bold;
+  line-height: calc(var(--line_height) * 3);
+  letter-spacing: -3.25px;
+  
+}
+
+
+
+.Sec5arrows {
+  position: absolute;
+  top:47%;
+  left:50%;
+  transform: -50%, -50%;
+}
+
+.Sec5arrows .rotate_left {
+  transform: translateX(-750px);
+  color:skyblue !important;
+  
+}
+.Sec5arrows .rotate_right {
+  transform: translateX(580px);
+  color:skyblue !important;
+  
+}
+
 .Sec6 {
   text-align: center;
+  height: 150vh;
+  padding: 120px 40px;
 }
-.Sec6 div h2 {
-  color: #17407E;
+
+.Sec6_text {
+color: var(--Main-Color, #272727);
+text-align: center;
+font-family: NanumGothic;
+font-size: 56px;
+font-style: normal;
+font-weight: 600;
+line-height: 60px; /* 107.143% */
+}
+
+.Sec6 h2 {
+  color: #17407E !important;
 }
 
 .Sec7_options li {
