@@ -49,7 +49,7 @@
     /* audio */
 
     //스크롤 19800보다 크면, 비디오 out (소리 off), 오디오 in(소리 on)
-    if (scrollTop > 1980) {
+    if (scrollTop > 2135) {
       console.log('오디오 음악재생',currentUrl);
       changeUrl = currentUrl.replace('mute=0','mute=1');
       videoiframe.attr('src',changeUrl);
@@ -283,8 +283,8 @@
         // scale과 translateY 값을 각각 0.01씩 증가시킵니다.       
         oddtxtoX +=1;
         currenttxtX +=1;   
-        Sec4txtodd.css({'transform': `translateX(${10 * oddtxtoX}px)`});
-        Sec4txteven.css({'transform':`translateX(${-10 * currenttxtX}px)`});
+        Sec4txtodd.css({'transform': `translateX(${20 * oddtxtoX}px)`});
+        Sec4txteven.css({'transform':`translateX(${-20 * currenttxtX}px)`});
       }
     }  
   });
