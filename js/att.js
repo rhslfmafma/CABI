@@ -42,8 +42,11 @@
     //스크롤 200보다 크면, 텍스트 out, 비디오 in(소리 on)
     if (scrollTop > 200) {
       VideoContainertext.hide();
-      videoiframe.addClass('active');
-      videoiframe.attr('src',changeUrl);      
+      //- 스크롤 200 만 되면 다시 시작하는 것을 HASCLASS을 이용해서, active가 없을 때만... 실행해서 무한 로딩을 막았다
+      if (!videoiframe.hasClass('active')) {
+        videoiframe.attr('src',changeUrl);      
+        videoiframe.addClass('active');  
+      } 
     }
 
     /* audio */
@@ -303,17 +306,6 @@
     prevArrow: '<button type="button" class="slick-prev">Previous</button>', // 이전 버튼 커스텀
     nextArrow: '<button type="button" class="slick-next">Next</button>' // 다음 버튼 커스텀
 });
-
-let slideimg = $('.slider');
-let Sec6_figuresubtext = $('.Sec6_figuresubtext');
-
-slideimg.hover(function(){
-  $(this).find('.Sec6_figuresubtext').addClass('active')  
-},
-function() {
-  $(this).find('.Sec6_figuresubtext').removeClass('active');
-}
-)
 
 /* SECTION9 */
 $('.Guide-Rules').slick({  

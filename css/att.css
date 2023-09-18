@@ -18,6 +18,7 @@ iframe {
   visibility: hidden;
   opacity: 0;
   transition: 0.5s;
+  vertical-align: middle;
 }
 iframe.active {
   visibility: visible;
@@ -30,6 +31,7 @@ iframe.active {
   position: sticky;
   top:0px;
   overflow: hidden;
+  vertical-align: middle;
 
 }
 
@@ -49,7 +51,6 @@ iframe.active {
   height: 140vh;
   flex-shrink: 0;
   text-align: center;
-  vertical-align: middle;
   position: relative;
   overflow: hidden;
 }
@@ -460,6 +461,11 @@ font-size: 18px;
 }
 
 
+.Sec6_figure:hover .Sec6_figuresubtext {
+  opacity: 1;
+}
+
+
 .Sec6_figuresubtext {
   position: absolute;
   top:170%;
@@ -470,9 +476,6 @@ font-size: 18px;
   opacity: 0;
   transition: 0.5s;
   color: #fff;
-}
-.Sec6_figuresubtext.active {  
-  opacity: 1;
 }
 
 
@@ -553,6 +556,9 @@ font-size: 18px;
   
 }
 
+.Sec8_sub01_txtgroup {
+margin-left: -75%;
+}
 .Sec8_sub01_cubeimggroup {
   height: 500px;
   margin: 20px auto;  
