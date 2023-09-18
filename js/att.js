@@ -304,14 +304,13 @@
     nextArrow: '<button type="button" class="slick-next">Next</button>' // 다음 버튼 커스텀
 });
 
-
 let slideimg = $('.slider');
 let Sec6_figuresubtext = $('.Sec6_figuresubtext');
 
-slideimg.hover(function(e){
+slideimg.hover(function(){
   $(this).find('.Sec6_figuresubtext').addClass('active')  
 },
-function(e) {
+function() {
   $(this).find('.Sec6_figuresubtext').removeClass('active');
 }
 )
@@ -342,5 +341,9 @@ $('a').mouseenter(function(){
 });
   $('a').mousedown(function(){
   $(this).css({cursor: 'url("/img/cabi_cursor_click.png"), auto'
+});
+  });
+  $('a').mouseup(function(){
+  $(this).css({cursor: 'url("/img/cabi_cursor.png"), auto'
 });
   });

@@ -494,6 +494,12 @@ font-size: 18px;
   text-align: center;
 }
 
+
+.Sec7_options {
+  gap :60px;
+  padding-top: 60px;
+}
+
 .Sec7_options li {
   width: 371.096px;
   height: 371.096px;
@@ -512,7 +518,7 @@ font-size: 18px;
   background: #E31A50;
 }
 
-.Sec7_options li h4 a {
+.Sec7_options li p a {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -521,7 +527,7 @@ font-size: 18px;
 }
 
 .Sec9 {
-  padding-bottom: 558px;
+  padding-bottom: 208px;
   text-align: center;
   overflow: hidden;  
 }
@@ -566,21 +572,23 @@ font-size: 18px;
 
 
 .Guide-Rules {
-  border: 1px solid #272727;
   background: #FFF;
-  margin-top: 238px;
-  overflow-x: hidden;
-  
+  margin-top: 108px;
+  overflow-x: hidden;  
 }
 
 .Guide-Rules li a {
-  background: conic-gradient(from 90deg at 48.31% 50%, #2B6DAA 20.625000447034836deg, #4B3CFB 166.8749964237213deg, #4B3CFB 277.4999928474426deg);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-white-space: nowrap;
+  color: #000;
+  font-size: 8em;
+
 }
 
+.Guide-Rules li a:hover { 
+  background: conic-gradient(from 90deg at 48.31% 50%, #2B6DAA 20.625000447034836deg, #4B3CFB 166.8749964237213deg, #4B3CFB 277.4999928474426deg);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .Guide-Rules .slick-slide {
   padding-left: 50px;
