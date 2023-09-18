@@ -469,9 +469,11 @@ font-size: 18px;
   font-size: 13px !important;
   line-height: 20px;
   opacity: 0;
+  transition: 0.5s;
+  color: #fff;
 }
 .Sec6_figuresubtext.active {  
-  opacity: 0;
+  opacity: 1;
 }
 
 

@@ -106,7 +106,7 @@
         Sec2title.css({
           'color': 'rgba(255, 255, 255, 0)',
           'text-shadow': '0 0 12px rgba(255,255,255,0.8)'  // 글자 투영 효과
-        }); // 수정          
+        }); // 수정 
       }
     }  
   });
@@ -299,3 +299,15 @@
     prevArrow: '<button type="button" class="slick-prev">Previous</button>', // 이전 버튼 커스텀
     nextArrow: '<button type="button" class="slick-next">Next</button>' // 다음 버튼 커스텀
 });
+
+
+let slideimg = $('.slider');
+let Sec6_figuresubtext = $('.Sec6_figuresubtext');
+
+slideimg.hover(function(){
+  Sec6_figuresubtext.addClass('active')  
+},
+function() {
+  Sec6_figuresubtext.removeClass('active');
+}
+)
