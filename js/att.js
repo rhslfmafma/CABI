@@ -351,5 +351,31 @@ $('a').mouseenter(function(){
 
   // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
   let map = new kakao.maps.Map(mapContainer[0], mapOption); 
+  let Sec8_sub_cubeimg_01 = $('.Sec8_sub_cubeimg_01');
 
+  function changeCoordinates(latitude, longitude) {
+      let mapOption = { 
+        center: new kakao.maps.LatLng(latitude, longitude),
+        level: 3
+      };
+      let map = new kakao.maps.Map($('#map')[0], mapOption); 
+    }
+  $('.Sec8_sub_cubeimg_01').click(function() {  //메가스톰 위도 경도
+      changeCoordinates(37.296749, 127.199628);
+      //클릭한 위치의 위도는 37.29674926702706 이고, 경도는 127.1996286860681 입니다
+    });
+  
+  $('.image2').click(function() {
+      changeCoordinates(34.789123, 123.456789);
+    });  
+  // 이하 같은 방식으로 다른 이미지들에 대해 등록합니다.
+  
+  // 위 코드에서 changeCoordinates 함수는 위도(latitude)와 경도(longitude)를 인자로 받아와서 지도를 해당 좌표로 초기화합니다. 각 이미지를 클릭할 때, 그에 해당하는 위도와 경도를 인자로 전달하여 changeCoordinates 함수를 호출합니다.
+  
+  // 이 코드를 사용하면 각 이미지를 클릭할 때마다 해당하는 위도와 경도로 지도가 초기화됩니다. 이때, 각 이미지에 대한 고유한 위도와 경도 값을 전달해야 합니다.
+  
+  
+  
+  
+  
   
