@@ -549,30 +549,48 @@ font-size: 18px;
   color: #fff;
 }
 
+.Sec8_biggroup {
+  position: relative;
+  overflow: hidden;
+}
+
+.Sec8_clickpage {
+  top:0%;
+  left:100%;
+  transform: translateX(50%);
+  position: absolute;
+}
 
 .Sec8 {
-  height: 300vh;
   background: linear-gradient(180deg, rgba(231, 254, 255, 0.70) 0%, rgba(0, 75, 172, 0.70) 100%);
   
 }
 
-.Sec8_sub01_txtgroup {
-margin-left: -75%;
+
+.Sec8_sub_txtgroup {
+margin:30px 0px 0px 120px;
 }
-.Sec8_sub01_cubeimggroup {
+.Sec8_sub_cubeimggroup {
   height: 500px;
   margin: 20px auto;  
   flex-wrap: wrap;
   gap:6%;
-  padding-left: 500px;
+  padding-left: 180px;
   margin-top: 30px;  
 }
 
-.Sec8_sub01_cubeimggroup img{
+.Sec8_sub_cubeimggroup img{
   width: 251px;
   height: 254px;
   object-fit: cover;
 }
+
+
+.map {
+  width:500px;
+  height:400px;
+}
+
 
 .Sec9 {
   padding-bottom: 208px;
