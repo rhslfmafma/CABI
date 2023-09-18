@@ -570,6 +570,7 @@ font-size: 18px;
   background: #FFF;
   margin-top: 238px;
   overflow-x: hidden;
+  
 }
 
 .Guide-Rules li a {
@@ -578,4 +579,23 @@ background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 white-space: nowrap;
+}
+
+
+.Guide-Rules .slick-slide {
+  padding-left: 50px;
+}
+
+
+
+body {
+  cursor: url('/img/cabi_cursor.png'), auto;}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -311,3 +311,34 @@ function() {
   Sec6_figuresubtext.removeClass('active');
 }
 )
+
+/* SECTION9 */
+$('.Guide-Rules').slick({  
+  autoplaySpeed: 100,   
+  variableWidth: true,  //텍스트 글자가 서로다를 경우
+  slidesToShow: 4,  //보여질 갯수
+  autoplay: true, //자동실행 
+  autoplaySpeed: 0,  //자동실행 속도
+  speed: 10000,  //돌아가는 속도
+  cssEase: 'linear',  //속도 방식   
+  infinite: true,      // 무한반복
+  focusOnSelect: false, 
+  loop: true,
+  infinite:true,
+  arrows:false,
+  pauseOnHover: true
+});
+
+
+/* cursor */
+$(document).ready(function(){
+  $('body, body a').mouseenter(function(){
+    $(this).css({
+      'cursor': 'url("/img/cabi_cursor_hover.png"), auto',
+      'animation': 'rotate 1s linear infinite'
+    });
+  });
+
+  $('body, body a').mousedown(function(){
+    $(this).css('cursor', 'url("/img/cabi_cursor_click.png"), auto');
+});
