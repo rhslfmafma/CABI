@@ -283,8 +283,8 @@
         // scale과 translateY 값을 각각 0.01씩 증가시킵니다.       
         oddtxtoX +=1;
         currenttxtX +=1;   
-        Sec4txtodd.css({'transform': `translateX(${20 * oddtxtoX}px)`});
-        Sec4txteven.css({'transform':`translateX(${-20 * currenttxtX}px)`});
+        Sec4txtodd.css({'transform': `translateX(${10 * oddtxtoX}px)`});
+        Sec4txteven.css({'transform':`translateX(${-10 * currenttxtX}px)`});
       }
     }  
   });
