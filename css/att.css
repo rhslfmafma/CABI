@@ -589,13 +589,6 @@ white-space: nowrap;
 
 
 body {
-  cursor: url('/img/cabi_cursor.png'), auto;}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  cursor: url('/img/cabi_cursor.png'), auto;
 }
+

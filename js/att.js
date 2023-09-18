@@ -331,14 +331,12 @@ $('.Guide-Rules').slick({
 
 
 /* cursor */
-$(document).ready(function(){
-  $('body, body a').mouseenter(function(){
-    $(this).css({
-      'cursor': 'url("/img/cabi_cursor_hover.png"), auto',
-      'animation': 'rotate 1s linear infinite'
-    });
+$('a').mouseenter(function(){
+  $(this).css({
+    cursor: 'url("/img/cabi_cursor_hover.png"), auto',
   });
-
-  $('body, body a').mousedown(function(){
-    $(this).css('cursor', 'url("/img/cabi_cursor_click.png"), auto');
 });
+  $('a').mousedown(function(){
+  $(this).css({cursor: 'url("/img/cabi_cursor_click.png"), auto'
+});
+  });
