@@ -88,9 +88,13 @@
         if (oX < 168) {
           oX +=1;   
           oY +=1;   
-          objectcircle1.css({'transform': `translateY(${-20 * oY}px) translateX(${20 * oX}px)`});
-          objectcircle2.css({'transform': `translateY(${-20 * oY}px) translateX(${-20 * oX}px)`});
-          objectcircle3.css({'transform': `translateY(${20 * oY}px) translateX(${-20 * oX}px)`});  
+          objectcircle1.css({
+            'transform': `translateY(${-20 * oY}px) translateX(${20 * oX}px) rotate(${-20 * oX}deg)`  
+
+
+        });
+          objectcircle2.css({'transform': `translateY(${-20 * oY}px) translateX(${-20 * oX}px) rotate(${-10 * oX}deg)`});
+          objectcircle3.css({'transform': `translateY(${20 * oY}px) translateX(${-20 * oX}px) rotate(${10 * oX}deg)`});  
         } 
       }
       if (scrollTop > 2140) {
@@ -101,7 +105,7 @@
         // Sec2 h2를 보이고, 투영하게    
         Sec2title.addClass('active');
       }
-      if (scrollTop > 2237) {
+      if (scrollTop > 2182) {
         // Sec2 h2를 보이고, 투영하게  
         Sec2title.css({
           'color': 'rgba(255, 255, 255, 0)',
@@ -304,11 +308,11 @@
 let slideimg = $('.slider');
 let Sec6_figuresubtext = $('.Sec6_figuresubtext');
 
-slideimg.hover(function(){
-  Sec6_figuresubtext.addClass('active')  
+slideimg.hover(function(e){
+  $(this).find('.Sec6_figuresubtext').addClass('active')  
 },
-function() {
-  Sec6_figuresubtext.removeClass('active');
+function(e) {
+  $(this).find('.Sec6_figuresubtext').removeClass('active');
 }
 )
 
