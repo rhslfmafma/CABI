@@ -170,12 +170,15 @@ if (!videoiframe.hasClass('active')) {
 
   /* SECTION3 */
 
+
   AOS.init({
     duration: 1200,
     easing: 'ease-in-out-back'
   });
 
   let Sec3_introtxt = $('.Sec3_introtxt');
+  let figure04_img = $('.figure04_img');
+
   $(window).scroll(function(){    
     let scrollTop = $(window).scrollTop();    //윈도우 객체의 scrollY속성을 사용하여 스크롤 양을 로드  
     // 스크롤 양이 이전 스크롤 양보다 큰 경우
@@ -183,6 +186,11 @@ if (!videoiframe.hasClass('active')) {
       if (scrollTop > 2672) {        
         Sec3_introtxt.css({
           opacity:'1'
+        })
+      } 
+      if (scrollTop > 6477) {        
+        figure04_img.attr({
+          src:'img/sec3_05_02.gif'
         })
       } 
     }  
