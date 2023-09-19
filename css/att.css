@@ -494,6 +494,7 @@ font-size: 18px;
 
 .Sec7 {
   text-align: center;
+  margin-bottom: 100px;
 }
 
 
@@ -558,6 +559,14 @@ font-size: 18px;
   top:0%;
   left:100%;
   position: absolute;
+  transition: 0.5s;
+}
+
+.Sec8_click {
+  padding: 30px;
+}
+.Sec8_click img{
+  width: 831px;
 }
 
 .Sec8 {
@@ -581,13 +590,41 @@ margin:30px 0px 0px 120px;
 .Sec8_sub_cubeimggroup img{
   width: 251px;
   height: 254px;
-  object-fit: cover;
+  object-fit: cover;  
 }
 
+
+.Sec8_sub_cubeimg_01 {
+  position: relative;
+  filter: brightness(80%);
+}
+
+
+
+
+
+
+.Sec8_sub_cubeimg_centertxt {
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 0;
+  color: #fff;
+}
+
+.Sec8_sub_cubeimg_01:hover .Sec8_sub_cubeimg_centertxt {
+  opacity: 1;
+}
 
 .map {
   width:500px;
   height:400px;
+}
+
+
+.Sec8_righttxtgroup {
+  padding-left: 50px;
 }
 
 

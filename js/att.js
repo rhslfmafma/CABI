@@ -343,6 +343,17 @@ $('a').mouseenter(function(){
 
 
   /* SECTION8 */
+  let Sec8_sub_cubeimg01 = $('.Sec8_sub_cubeimg_01');
+  let Sec8_clickpage = $('.Sec8_clickpage');
+
+
+  Sec8_sub_cubeimg01.click(function(){
+    Sec8_clickpage.css({'left':'0%'});
+  })
+
+
+
+
   let mapContainer = $('#map'); // 지도를 표시할 div 
   let mapOption = { 
       center: new kakao.maps.LatLng(37.293327, 127.201322), // 캐리비안베이 중심좌표
