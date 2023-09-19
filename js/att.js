@@ -176,7 +176,7 @@ if (!videoiframe.hasClass('active')) {
 
   let Sec3_introtxt = $('.Sec3_introtxt');
   $(window).scroll(function(){    
-    scrollTop = $(window).scrollTop();    //윈도우 객체의 scrollY속성을 사용하여 스크롤 양을 로드  
+    let scrollTop = $(window).scrollTop();    //윈도우 객체의 scrollY속성을 사용하여 스크롤 양을 로드  
     // 스크롤 양이 이전 스크롤 양보다 큰 경우
     if (scrollTop > scrollmat) {       
       if (scrollTop > 2672) {        
@@ -329,7 +329,7 @@ if (!videoiframe.hasClass('active')) {
 
   //주어진 코드는 윈도우를 스크롤할 때 발생하는 이벤트 핸들러입니다.
   $(window).scroll(function(){    
-    scrollTop = $(window).scrollTop();    //윈도우 객체의 scrollY속성을 사용하여 스크롤 양을 로드  
+    let scrollTop = $(window).scrollTop();    //윈도우 객체의 scrollY속성을 사용하여 스크롤 양을 로드  
     // 스크롤 양이 이전 스크롤 양보다 큰 경우
     if (scrollTop > scrollmat) {       
       if (scrollTop > 6800) {
