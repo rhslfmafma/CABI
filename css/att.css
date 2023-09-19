@@ -1,5 +1,9 @@
 /* header */
 
+.hamburger_btn, .hamburger_modal,.lang_dropdown{
+  z-index: 99;
+  position: fixed;
+}
 
 /* body */
 
