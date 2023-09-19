@@ -16,8 +16,10 @@ let scrollTop ;
 
 // 주어진 코드는 윈도우를 스크롤할 때 발생하는 이벤트 핸들러입니다.
 $(window).scroll(function(){    
-  scrollTop = $(window).scrollTop();    //윈도우 객체의 scrollY속성을 사용하여 스크롤 양을 로드
-  lastScroll = scrollTop;
+      //윈도우 객체의 scrollY속성을 사용하여 스크롤 양을 로드 
+      scrollTop = $(window).scrollTop();
+
+
   let textopacity = 1 - (scrollTop / 500); //  // 500으로 나눈 값의 차이를 이용하여 textopacity 값을 계산합니다.
   console.log('스크롤 양: ' + scrollTop);    
 
@@ -154,15 +156,14 @@ if (!videoiframe.hasClass('active')) {
       if (scrollTop < lastScroll) {
         // 스크롤 양이 줄어 들때
         console.log('위로 스크롤');
-                   
-   
     }       else {
        // 스크롤 양이 늘어 들때
-        console.log('아래 스크롤');
-         
+        console.log('아래 스크롤');         
       } 
       console.log(lastScroll);
       console.log(scrollTop);
+
+      lastScroll = scrollTop;
   });
 
   
