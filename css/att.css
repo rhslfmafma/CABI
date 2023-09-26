@@ -743,7 +743,7 @@ margin-left: 50px;
 
 
 body {
-  cursor: url('/img/cabi_cursor.png'), auto;
+  cursor: url('../img/cabi_cursor.png'), auto;
 }
 
 

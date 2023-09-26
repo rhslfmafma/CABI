@@ -384,15 +384,15 @@ $('.Guide-Rules').slick({
 /* cursor */
 $('a').mouseenter(function(){
   $(this).css({
-    cursor: 'url("/img/cabi_cursor_hover.png"), auto',
+    cursor: 'url("../img/cabi_cursor_hover.png"), auto',
   });
 });
   $('a').mousedown(function(){
-  $(this).css({cursor: 'url("/img/cabi_cursor_click.png"), auto'
+  $(this).css({cursor: 'url("../img/cabi_cursor_click.png"), auto'
 });
   });
   $('a').mouseup(function(){
-  $(this).css({cursor: 'url("/img/cabi_cursor.png"), auto'
+  $(this).css({cursor: 'url("../img/cabi_cursor.png"), auto'
 });
   });
 
