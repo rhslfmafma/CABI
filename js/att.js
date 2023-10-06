@@ -407,7 +407,10 @@ $('a').mouseenter(function(){
   let Sec8_sub03 = $('#Sec8_sub03');
 
   Sec8_sub_cubeimg01.click(function(){
+    Sec8_clickpage.show();
     Sec8_clickpage.css({'left':'0%'});
+
+
   })
   arrow_circle_click01.click(function(){
     Sec8_clickpage.css({'left':'100%'});
